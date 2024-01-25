@@ -28,6 +28,8 @@ function Home() {
             <Movie
               //key는 React.js에서만, map 안에서 컴포넌트들을 render할 때 사용
               key={movie.id}
+              //movie는 Prop으로 id를 받음
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
