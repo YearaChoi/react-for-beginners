@@ -1,43 +1,49 @@
-import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
+import Slide from "../components/Slide";
+import { Group_key_arr, Group_obj } from "../atom/NavList";
 
-//Home route는 기본적으로 App component 전체를 가지고 있음
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
+
 function Home() {
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const json = await (
-      await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
-      )
-    ).json();
-    setMovies(json.data.movies);
-    setLoading(false);
-  };
-  useEffect(() => {
-    getMovies();
-  }, []);
-  //로딩이 아닌 경우 영화를 보여주도록
   return (
     <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-          {movies.map((movie) => (
-            <Movie
-              //key는 React.js에서만, map 안에서 컴포넌트들을 render할 때 사용
-              key={movie.id}
-              //movie는 Prop으로 id를 받음
-              id={movie.id}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
+      {Group_key_arr.map((group) => {
+        return (
+          <div key={group}>
+            <div className={styles.title}>
+              <div className={styles.titleBox}>
+                <Link
+                  to={`/page/${Group_obj[group]}/1`}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignContent: "center",
+                  }}
+                >
+                  <div className={styles.titleImg}>
+                    {/* <FontAwesomeIcon icon={faFaceSmile}></FontAwesomeIcon> */}
+                  </div>
+                  <div>
+                    <span>{group}</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <Slide
+              ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&${Group_obj[group]}&sort_by=rating`}
             />
-          ))}
+          </div>
+        );
+      })}
+      <div className={styles.footer}>
+        <div className={styles.copyright}>
+          <h3 className={styles.copyright_letter}>
+            Copyright belongs to Kyungsle
+          </h3>
         </div>
-      )}
+      </div>
     </div>
   );
 }
