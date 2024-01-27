@@ -1,18 +1,15 @@
-//app.js는 더 이상 영화를 보여주지 않지만 router을 render함
-//router은 URL을 보고 있는 component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
+      <Navbar />
       <Routes>
-        <Route
-          path={process.env.PUBLIC_URL + "/movie/:id"}
-          element={<Detail />}
-        ></Route>
-        <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+        <Route path={"/"} element={<Home />} />
+        <Route path={`/movie/:id`} element={<Detail />} />
       </Routes>
     </Router>
   );
