@@ -3,6 +3,7 @@ import styles from "./MovieDetail.module.css";
 import default_Img from "./Img/default_Img.jpg";
 import default_Back_Img from "./Img/default_Back_Img.jpg";
 
+// 이미지 로딩 중 오류가 발생했을 때 처리할 콜백함수 지정
 const onErrorImg = (e) => {
   e.target.src = default_Img;
 };
@@ -11,6 +12,7 @@ const onErrorBackImg = (e) => {
   e.target.src = default_Back_Img;
 };
 
+// MovieDetail 부모 컴포넌트에서 전달된 프로퍼티들을 인자로 받아 사용. 해당 영화의 세부 정보를 동적으로 표시할 수 있음
 function MovieDetail({
   background_image_original,
   coverImg,
@@ -44,7 +46,7 @@ function MovieDetail({
             <p>{rating ? `rating: ${rating} / 10` : null}</p>
             <p>{runtime ? `runtime: ${runtime} (min)` : null}</p>
             {genres ? (
-              // 장르는 배열임
+              // 장르는 배열로
               <div>
                 <b>{"genres"}</b>
                 <ul>

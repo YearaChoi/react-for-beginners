@@ -9,6 +9,7 @@ const onErrorImg = (e) => {
   e.target.src = default_Img;
 };
 
+// 함수형 컴포넌트를 정의. 부모 컴포넌트에서 전달된 프로퍼티들을 인자로 받아 사용. 각 인자는 특정 영화에 대한 정보를 나타냄
 function MovieGroup({ id, coverImg, title, rating, runtime, year, summary }) {
   return (
     <div className={styles.movie}>

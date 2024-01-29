@@ -4,7 +4,9 @@ import MovieDetail from "../render/MovieDetail";
 import styles from "./Detail.module.css";
 import Load from "../components/Load";
 
+// 영화의 세부 정보를 표시하는 페이지
 function Detail() {
+  // 특정 영화의 세부 정보를 표시하므로, 해당 영화의 고유한 식별자 Id가 필요
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState([]);
@@ -13,6 +15,7 @@ function Detail() {
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
     ).json();
 
+    // 영화 상태 업로드
     setMovie(json.data.movie);
     setLoading(false);
   };
@@ -26,6 +29,7 @@ function Detail() {
       {loading ? (
         <Load />
       ) : (
+        // MovieDetail 컴포넌트를 렌더링하고, 해당 영화의 세부 정보를 movie 상태에서 가져와서 각각의 prop으로 전달
         <MovieDetail
           key={movie.id}
           id={movie.id}

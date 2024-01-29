@@ -36,6 +36,7 @@ function Group() {
         <Load />
       ) : (
         <div className={styles.movies}>
+          {/* movies 배열을 순회하면서 각 영화에 대한 정보를 나타내는 MovieGroup 컴포넌트를 렌더링. movie 객체의 속성들을 props로 전달 */}
           {movies.map((movie) => (
             <MovieGroup
               key={movie.id}
@@ -50,10 +51,14 @@ function Group() {
           ))}
         </div>
       )}
+
+      {/* loading이 false일 때, 화면 하단에 그룹 목록에 대한 링크를 표시 */}
       {loading ? null : (
         <div className={styles.footer}>
           <div className={styles.list}>
+            {/* List_arr 배열을 순회하면서 각 그룹에 대한 링크를 나타내는 Link 컴포넌트를 생성 */}
             {List_arr.map((lst) => {
+              // 각 링크의 목적지 경로를 동적으로 생성
               return (
                 <Link key={lst} to={`/page/${group}/${lst}`}>
                   {lst}
