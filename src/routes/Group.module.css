@@ -1,0 +1,34 @@
+/* 장르별 영화 css */
+.container {
+  height: 100%;
+  margin-top: 30px;
+}
+
+/* 그리드의 열을 정의. 여러 열이 있고 각 열의 크기는 자동으로 조정됨. 열을 자동으로 채우면서 최소 크기가 500px이고 최대 크기는 자동으로 조절됨. 화면 크기에 따라 열의 개수가 유동적으로 조절되며, 각 열은 최소 500px의 너비를 갖음 */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, auto));
+  margin-bottom: 30px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 80px;
+}
+
+.list {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.list a {
+  text-decoration: none;
+  padding-right: 27px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.8);
+}

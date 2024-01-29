@@ -1,0 +1,45 @@
+.movie {
+  color: rgb(32, 30, 30);
+  display: flex;
+  justify-content: center;
+}
+
+/* flex-row : show divs 가로정렬 */
+.show {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px;
+  padding: 10px;
+  width: 500px;
+  height: 370px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* float:left -> 글자를 이미지 오른쪽에 배치 가능 */
+.Img {
+  padding-top: 10px;
+  padding-left: 10px;
+  float: left;
+  width: 230px;
+  height: 345px;
+}
+
+.letters {
+  width: 250px;
+  height: 350px;
+  padding-left: 20px;
+}
+
+.title {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.letters h3,
+.letters p {
+  margin: 10px;
+}

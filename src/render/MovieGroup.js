@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./MovieGroup.module.css";
 import default_Img from "./Img/default_Img.jpg";
 
+// 하나의 영화 카드
+
 const onErrorImg = (e) => {
   e.target.src = default_Img;
 };

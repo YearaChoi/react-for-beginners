@@ -1,0 +1,28 @@
+/* 카드에 슬라이드, 애니메이션 */
+
+.movie {
+  width: 230px;
+  background-color: whitesmoke;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.movie:hover {
+  filter: brightness(50%);
+}
+
+.letters {
+  padding: 0px 10px;
+}
+
+.title {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movieName a {
+  color: black;
+}

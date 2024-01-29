@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px 30px;
+  height: 80px;
+  background-color: rgb(26, 27, 26);
+  z-index: 10;
+}
+
+.GroupLink,
+.Link {
+  display: flex;
+  flex-direction: row;
+}
+
+.container a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding-right: 50px;
+  font-size: 20px;
+}
+
+.container a:hover {
+  color: white;
+}

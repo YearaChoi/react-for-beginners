@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import styles from "./Group.module.css";
 import Load from "../components/Load";
 
+// 영화 카드들 정렬
+
 const List_arr = [1, 2, 3, 4, 5];
 
 function Group() {

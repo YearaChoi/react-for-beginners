@@ -5,7 +5,10 @@ const Group_obj = {
   "High Rating": "minimum_rating=8",
   Romance: "genre=romance",
   Music: "genre=music",
+  Adventure: "genre=adventure",
+  Documentary: "genre=Documentary",
   Animation: "genre=animation",
+  Family: "genre=Family",
 };
 
 const Group_key_arr = Object.keys(Group_obj);
