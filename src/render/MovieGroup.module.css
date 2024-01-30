@@ -39,6 +39,10 @@
   justify-content: center;
 }
 
+.title a {
+  color: black;
+}
+
 .letters h3,
 .letters p {
   margin: 10px;
