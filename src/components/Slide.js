@@ -3,9 +3,10 @@ import MovieSlide from "../render/MovieSlide";
 import styles from "./Slide.module.css";
 import Load from "../components/Load";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCaretSquareLeft } from "@fortawesome/free-solid-svg-icons";
-// import { faCaretSquareRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  IoMdArrowDropleftCircle,
+  IoMdArrowDroprightCircle,
+} from "react-icons/io";
 
 //Home slide show
 function Slide({ ytsApi }) {
@@ -72,14 +73,14 @@ function Slide({ ytsApi }) {
         )}
       </div>
 
-      {/* FontAwesome 버튼 */}
+      {/* 버튼 */}
       {loading ? null : (
         <div className={styles.controller}>
           <button className={styles.left} onClick={onClickL}>
-            {/* <FontAwesomeIcon icon={faCaretSquareLeft}></FontAwesomeIcon> */}
+            <IoMdArrowDropleftCircle />
           </button>
           <button className={styles.right} onClick={onClickR}>
-            {/* <FontAwesomeIcon icon={faCaretSquareRight}></FontAwesomeIcon> */}
+            <IoMdArrowDroprightCircle />
           </button>
         </div>
       )}
